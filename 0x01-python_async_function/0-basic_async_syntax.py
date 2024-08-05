@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
-"""
-returns random wait from 0 to max_delay default number
-"""
-
-import time
+'''Task 0's module.
+'''
 import asyncio
 import random
 
 
 async def wait_random(max_delay: int = 10) -> float:
-    """ returns random_wait """
-    random_wait = random.random() * max_delay
-    await asyncio.sleep(random_wait)
-    return random_wait
+    '''Waits for a random number of seconds.
+    '''
+    wait_time = random.random() * max_delay
+    await asyncio.sleep(wait_time)
+    return wait_time
