@@ -18,21 +18,21 @@ from typing import Dict
 
 class TestGithubOrgClient(unittest.TestCase):
     """TestGithubOrgClient test class"""
+    @patch(
+        "client.get_json",
+    )
     @parameterized.expand([
         ("google", {'login': "google"}),
         ("abc", {'login': "abc"}),
     ])
-    @patch(
-        "client.get_json",
-    )
-    def test_org(self, org: str, expected_response: Dict,
-                 mocked_function: MagicMock) -> None:
+    def test_org(self, org: str, expected_result: Dict,
+                 Mocked_func: MagicMock) -> None:
         """method tests GithubOrgClient.org returns the correct value"""
-        mocked_function.return_value = MagicMock(
-            return_value=expected_response)
-        goclient = GithubOrgClient(org)
-        self.assertEqual(goclient.org(), expected_response)
-        mocked_function.assert_called_once_with(
+        Mocked_func.return_value = MagicMock(
+            return_value=expected_result)
+        goclientobj = GithubOrgClient(org)
+        self.assertEqual(goclientobj.org(), expected_result)
+        Mocked_func.assert_called_once_with(
             "https://api.github.com/orgs/{}".format(org)
         )
 
