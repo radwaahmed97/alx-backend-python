@@ -19,8 +19,8 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(tested_output, expected_result)
 
     @parameterized.expand([
-        ("case1", {}, ("a",)),
-        ("case2", {"a": 1}, ("a", "b"))
+        ("case1", {}, ("a",) 'a'),
+        ("case2", {"a": 1}, ("a", "b"), 'b')
     ])
     def test_access_nested_map_exception(self, nested_map, path, error_result):
         """tests if error raised when keys not found"""
