@@ -18,13 +18,13 @@ from typing import Dict
 
 class TestGithubOrgClient(unittest.TestCase):
     """TestGithubOrgClient test class"""
-    @patch(
-        "client.get_json",
-    )
     @parameterized.expand([
         ("google", {'login': "google"}),
         ("abc", {'login': "abc"}),
     ])
+    @patch(
+        "client.get_json",
+    )
     def test_org(self, org: str, expected_result: Dict,
                  Mocked_func: MagicMock) -> None:
         """method tests GithubOrgClient.org returns the correct value"""
