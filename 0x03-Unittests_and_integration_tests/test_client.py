@@ -2,11 +2,18 @@
 """contains TestGithubOrgClient testclass"""
 
 import unittest
-from unittest.mock import Mock, patch, MagicMock, PropertyMock
+from unittest.mock import (
+    MagicMock,
+    Mock,
+    PropertyMock,
+    patch,
+)
 from parameterized import parameterized, parameterized_class
-from client import GithubOrgClient
+from client import (
+    GithubOrgClient
+)
 from fixtures import TEST_PAYLOAD
-from typing inport Dict
+from typing import Dict
 
 
 class TestGithubOrgClient(unittest.TestCase):
