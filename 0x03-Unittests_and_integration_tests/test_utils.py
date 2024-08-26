@@ -2,7 +2,7 @@
 """unit test for utils.access_nested_map"""
 
 import unittest
-from unittests.mock import patch, Mock
+from unittest.mock import patch, Mock
 from parameterized import parameterized
 from utils import access_nested_map, get_json, memoize
 
