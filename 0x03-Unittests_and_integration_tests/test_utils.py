@@ -42,5 +42,5 @@ class TestGetJson(unittest.TestCase):
         Mocked_output.json.return_value = test_payload
         with patch('requests.get', return_value=Mocked_output):
             tested_output = get_json(test_url)
-            self.asserEqual(tested_output, test_payload)
+            self.assertEqual(tested_output, test_payload)
             Mocked_output.json.assert_called_once()
